@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     fetchTodoData();
+    // eslint-disable-next-line
   }, []);
 
   function fetchTodoDataC() {
@@ -69,7 +70,7 @@ function App() {
         title: todo
       })
         .then(res => {
-          if (res.data.status == "success") {
+          if (res.data.status === "success") {
             setTodo("");
             fetchTodoData()
           } else {
@@ -175,15 +176,15 @@ function App() {
         </span>
         <ul className="filters">
           <li>
-            <a href="#" onClick={() => fetchTodoData()}>All</a>
+            <a href="/#" onClick={() => fetchTodoData()}>All</a>
           </li>
           <span></span>
           <li onClick={() => fetchTodoDataNc(false)}>
-            <a href="#">Active</a>
+            <a href="/#">Active</a>
           </li>
           <span></span>
           <li onClick={() => fetchTodoDataC()}>
-            <a href="#" >Completed</a>
+            <a href="/#" >Completed</a>
           </li>
           <span></span>
         </ul>
